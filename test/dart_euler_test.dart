@@ -23,4 +23,19 @@ void main() {
     expect(smallestMultiple(1, 10), 2520);
     expect(smallestMultiple(1, 20), 232792560);
   });
+
+  test("longestCollatzSequence", () {
+    expect(() => longestCollatzSequence(-1),
+        throwsA(const TypeMatcher<AssertionError>()));
+    expect(() => longestCollatzSequence(0),
+        throwsA(const TypeMatcher<AssertionError>()));
+
+    var res = longestCollatzSequence(10);
+    expect(res.longestChainNumber, 9);
+    expect(res.maxChainLength, 20);
+
+    res = longestCollatzSequence(1000000);
+    expect(res.longestChainNumber, 837799);
+    expect(res.maxChainLength, 525);
+  });
 }
