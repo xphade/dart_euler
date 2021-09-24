@@ -1,5 +1,8 @@
-import 'package:dart_euler/dart_euler.dart' as dart_euler;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${dart_euler.calculate()}!');
+import 'package:dart_euler/dart_euler.dart' as de;
+
+void main() {
+  print("5.  Smallest multiple:   ${de.smallestMultiple(1, 20)}");
+  print("20. Factorial digit sum: ${de.factorialDigitSum(100)}");
 }

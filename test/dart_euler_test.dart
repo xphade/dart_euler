@@ -2,7 +2,25 @@ import 'package:dart_euler/dart_euler.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 42);
+  test('factorialDigitSum', () {
+    expect(() => factorialDigitSum(-1),
+        throwsA(const TypeMatcher<AssertionError>()));
+    expect(factorialDigitSum(0), 1);
+    expect(factorialDigitSum(5), 3);
+    expect(factorialDigitSum(10), 27);
+    expect(factorialDigitSum(100), 648);
+  });
+
+  test("smallestMultiple", () {
+    expect(() => smallestMultiple(2, -3),
+        throwsA(const TypeMatcher<AssertionError>()));
+    expect(() => smallestMultiple(-3, -2),
+        throwsA(const TypeMatcher<AssertionError>()));
+    expect(() => smallestMultiple(3, 2),
+        throwsA(const TypeMatcher<AssertionError>()));
+
+    expect(smallestMultiple(2, 2), 2);
+    expect(smallestMultiple(1, 10), 2520);
+    expect(smallestMultiple(1, 20), 232792560);
   });
 }
