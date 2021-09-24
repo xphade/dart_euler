@@ -107,3 +107,37 @@ LCSResult longestCollatzSequence(int limit) {
 
   return LCSResult(longestChainNumber, maxChainLength);
 }
+
+/// Determines the index of the first Fibonacci number with [nDigits] digits.
+///
+/// The function calculates the Fibonacci sequence until the current number
+/// contains the given [nDigits] digits. It then returns the index of this
+/// number.
+///
+/// The Fibonacci sequence is defined by `F_n = F_{n-2} + F_{n-2}` where `f_1 =
+/// f_2 = 1`.
+///
+/// Example:
+/// ```dart
+/// // 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+/// nDigitsFibonacciNumber(2) == 7
+/// nDigitsFibonacciNumber(3) == 12
+/// ```
+int nDigitFibonacciNumber(int nDigits) {
+  assert(nDigits > 0);
+
+  if (nDigits == 1) return 1;
+
+  var prevNumber = BigInt.from(1);
+  var curNumber = BigInt.from(1);
+  var index = 2;
+
+  while (curNumber.toString().length < nDigits) {
+    var nextNumber = prevNumber + curNumber;
+    prevNumber = curNumber;
+    curNumber = nextNumber;
+    index++;
+  }
+
+  return index;
+}

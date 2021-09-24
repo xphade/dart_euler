@@ -38,4 +38,15 @@ void main() {
     expect(res.longestChainNumber, 837799);
     expect(res.maxChainLength, 525);
   });
+
+  test("nDigitsFibonacciNumber", () {
+    expect(() => nDigitFibonacciNumber(-1),
+        throwsA(const TypeMatcher<AssertionError>()));
+    expect(() => nDigitFibonacciNumber(0),
+        throwsA(const TypeMatcher<AssertionError>()));
+
+    expect(nDigitFibonacciNumber(1), 1);
+    expect(nDigitFibonacciNumber(3), 12);
+    expect(nDigitFibonacciNumber(1000), 4782);
+  });
 }
