@@ -1,6 +1,7 @@
 import 'package:dart_euler/dart_euler.dart' as de;
 
 void main() {
+  print("1.  Multiples of 3 or 5:         ${de.sumOfMultiples(20)}");
   print("5.  Smallest multiple:           ${de.smallestMultiple(1, 20)}");
 
   final result14 = de.longestCollatzSequence(1000000);

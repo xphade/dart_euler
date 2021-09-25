@@ -41,4 +41,12 @@ void main() {
     expect(nDigitFibonacciNumber(3), 12);
     expect(nDigitFibonacciNumber(1000), 4782);
   });
+
+  test("sumOfMultiples", () {
+    expect(() => sumOfMultiples(-1), throwsAssertion());
+    expect(sumOfMultiples(0), 0);
+    expect(sumOfMultiples(2), 0);
+    expect(sumOfMultiples(10), 23);
+    expect(sumOfMultiples(1000), 233168);
+  });
 }
