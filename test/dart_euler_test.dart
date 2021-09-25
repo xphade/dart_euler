@@ -49,4 +49,12 @@ void main() {
     expect(sumOfMultiples(10), 23);
     expect(sumOfMultiples(1000), 233168);
   });
+
+  test("sumSquareDifference", () {
+    expect(() => sumSquareDifference(-1), throwsAssertion());
+    expect(() => sumSquareDifference(0), throwsAssertion());
+    expect(sumSquareDifference(1), 0);
+    expect(sumSquareDifference(10), 2640);
+    expect(sumSquareDifference(100), 25164150);
+  });
 }

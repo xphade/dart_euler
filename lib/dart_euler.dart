@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 /// Calculates the factorial of [n] through recursion.
 BigInt _factorial(BigInt n) {
   if (n <= BigInt.from(1)) return BigInt.from(1);
@@ -148,6 +150,7 @@ int nDigitFibonacciNumber(int nDigits) {
 /// or 5 and returns their sum. It asserts that the given [limit] is
 /// non-negative.
 ///
+/// Example:
 /// ```dart
 /// sumOfMultiples(10) == 23 // 3 + 5 + 6 + 9
 /// sumOfMultiples(20) == 78 // 3 + 5 + 6 + 9 + 10 + 12 + 15 + 18
@@ -161,4 +164,31 @@ int sumOfMultiples(int limit) {
   }
 
   return sum;
+}
+
+/// Calculates the sum square difference of all numbers up until [maxNum].
+///
+/// The function calculates the difference between the squared sum and the sum
+/// of squares of all numbers in range \[1, maxNum]. It asserts that the given
+/// [maxNum] is a positive integer.
+///
+/// The squared sum is defined as `(1 + 2 + ... + maxNum)^2`. The sum of squares
+/// is defined as `1^2 + 2^2 + ... + maxNum^2`.
+///
+/// Example:
+/// ```dart
+/// // (1 + ... + 10)^2 - (1^2 + ... + 10^2) = 3025 - 385 = 2640
+/// sumSquareDifference(10) == 2640
+/// ```
+int sumSquareDifference(int maxNum) {
+  assert(maxNum > 0);
+
+  final numberSequence = List.generate(maxNum, (index) => index + 1);
+  final sumOfSquares = numberSequence
+      .map((number) => math.pow(number, 2) as int)
+      .reduce((value, number) => value + number);
+  final squaredSum = math.pow(
+      numberSequence.reduce((value, number) => value + number), 2) as int;
+
+  return squaredSum - sumOfSquares;
 }
