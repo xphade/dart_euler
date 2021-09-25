@@ -29,7 +29,7 @@ int factorialDigitSum(int number) {
 /// Detects the smallest multiple of all numbers between [low] and [high].
 ///
 /// The function detects the smallest number which is divisible by all the
-/// numbers in range [low, high]. It asserts that both inputs are positive and
+/// numbers in range \[low, high]. It asserts that both inputs are positive and
 /// [low] is smaller or equal to [high].
 ///
 /// Example:
@@ -72,7 +72,7 @@ List<int> _collatz(int startValue) {
   return sequence;
 }
 
-/// Helper class to return the result of the `longestCollatzSequence` function.
+/// Helper class to return the result of the [longestCollatzSequence] function.
 class LCSResult {
   final int longestChainNumber;
   final int maxChainLength;
@@ -82,14 +82,14 @@ class LCSResult {
 /// Finds the longest Collatz sequence of all start values from 1 to [limit].
 ///
 /// The function calculates the Collatz sequence for all start values in range
-/// [1, limit]. It then returns the number producing the longest chain with its
+/// \[1, limit]. It then returns the number producing the longest chain with its
 /// corresponding length.
 ///
 /// The Collatz sequence is defined as
 /// * `n -> n/2`    if `n` is even
 /// * `n -> 3n + 1` if `n` is odd
 ///
-/// The function asserts that the given limit is a positive integer.
+/// The function asserts that the given [limit] is a positive integer.
 LCSResult longestCollatzSequence(int limit) {
   assert(limit > 0);
 
@@ -114,7 +114,7 @@ LCSResult longestCollatzSequence(int limit) {
 /// contains the given [nDigits] digits. It then returns the index of this
 /// number.
 ///
-/// The Fibonacci sequence is defined by `F_n = F_{n-2} + F_{n-2}` where `f_1 =
+/// The Fibonacci sequence is defined by `F_n = F_{n-2} + F_{n-1}` where `f_1 =
 /// f_2 = 1`.
 ///
 /// Example:
