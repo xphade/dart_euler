@@ -21,6 +21,18 @@ void main() {
     expect(evenFibonacciNumbers(4000000), 4613732);
   });
 
+  test("largestPalindromeProduct", () {
+    expect(() => largestPalindromeProduct(-1), throwsAssertion);
+    expect(() => largestPalindromeProduct(0), throwsAssertion);
+
+    var res = largestPalindromeProduct(1);
+    expect(res?.product, 9);
+    res = largestPalindromeProduct(2);
+    expect(res?.product, 9009);
+    res = largestPalindromeProduct(3);
+    expect(res?.product, 906609);
+  });
+
   test("smallestMultiple", () {
     expect(() => smallestMultiple(2, -3), throwsAssertion);
     expect(() => smallestMultiple(-3, -2), throwsAssertion);
