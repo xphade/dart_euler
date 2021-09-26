@@ -3,8 +3,8 @@
 /// This is the solution to Project Euler problem 5.
 ///
 /// The function detects the smallest number which is divisible by all the
-/// numbers in range \[low, high]. It asserts that both inputs are positive and
-/// [low] is smaller or equal to [high].
+/// numbers in range [[low], [high]]. It asserts that both inputs are positive
+/// and [low] is smaller or equal to [high].
 ///
 /// Example:
 /// ```dart

@@ -5,7 +5,7 @@ import 'dart:math' show pow;
 /// This is the solution to Project Euler problem 6.
 ///
 /// The function calculates the difference between the squared sum and the sum
-/// of squares of all numbers in range \[1, maxNum]. It asserts that the given
+/// of squares of all numbers in range [1, [maxNum]]. It asserts that the given
 /// [maxNum] is a positive integer.
 ///
 /// The squared sum is defined as `(1 + 2 + ... + maxNum)^2`. The sum of squares

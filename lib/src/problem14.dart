@@ -23,8 +23,8 @@ class LCSResult {
 /// This is the solution to Project Euler problem 14.
 ///
 /// The function calculates the Collatz sequence for all start values in range
-/// \[1, limit]. It then returns the number producing the longest chain with its
-/// corresponding length.
+/// [1, [limit]]. It then returns the number producing the longest chain with
+/// its corresponding length.
 ///
 /// The Collatz sequence is defined as
 /// * `n -> n/2`    if `n` is even
