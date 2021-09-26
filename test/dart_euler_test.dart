@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 Matcher throwsAssertion = throwsA(isA<AssertionError>());
 
 void main() {
-  test("sumOfMultiples", () {
+  test("#01 sumOfMultiples", () {
     expect(() => sumOfMultiples(-1), throwsAssertion);
     expect(sumOfMultiples(0), 0);
     expect(sumOfMultiples(2), 0);
@@ -12,7 +12,7 @@ void main() {
     expect(sumOfMultiples(1000), 233168);
   });
 
-  test("evenFibonacciNumber", () {
+  test("#02 evenFibonacciNumber", () {
     expect(() => evenFibonacciNumbers(-1), throwsAssertion);
     expect(evenFibonacciNumbers(0), 0);
     expect(evenFibonacciNumbers(1), 0);
@@ -21,7 +21,7 @@ void main() {
     expect(evenFibonacciNumbers(4000000), 4613732);
   });
 
-  test("largestPalindromeProduct", () {
+  test("#04 largestPalindromeProduct", () {
     expect(() => largestPalindromeProduct(-1), throwsAssertion);
     expect(() => largestPalindromeProduct(0), throwsAssertion);
 
@@ -33,7 +33,7 @@ void main() {
     expect(res?.product, 906609);
   });
 
-  test("smallestMultiple", () {
+  test("#05 smallestMultiple", () {
     expect(() => smallestMultiple(2, -3), throwsAssertion);
     expect(() => smallestMultiple(-3, -2), throwsAssertion);
     expect(() => smallestMultiple(3, 2), throwsAssertion);
@@ -42,7 +42,7 @@ void main() {
     expect(smallestMultiple(1, 20), 232792560);
   });
 
-  test("sumSquareDifference", () {
+  test("#06 sumSquareDifference", () {
     expect(() => sumSquareDifference(-1), throwsAssertion);
     expect(() => sumSquareDifference(0), throwsAssertion);
     expect(sumSquareDifference(1), 0);
@@ -50,7 +50,7 @@ void main() {
     expect(sumSquareDifference(100), 25164150);
   });
 
-  test("longestCollatzSequence", () {
+  test("#14 longestCollatzSequence", () {
     expect(() => longestCollatzSequence(-1), throwsAssertion);
     expect(() => longestCollatzSequence(0), throwsAssertion);
 
@@ -63,7 +63,7 @@ void main() {
     expect(res.maxChainLength, 525);
   });
 
-  test("powerDigitSum", () {
+  test("#16 powerDigitSum", () {
     expect(() => powerDigitSum(-1, 1), throwsAssertion);
     expect(() => powerDigitSum(1, -1), throwsAssertion);
     expect(() => powerDigitSum(-1, -1), throwsAssertion);
@@ -75,7 +75,7 @@ void main() {
     expect(powerDigitSum(2, 1000), 1366);
   });
 
-  test('factorialDigitSum', () {
+  test('#20 factorialDigitSum', () {
     expect(() => factorialDigitSum(-1), throwsAssertion);
     expect(factorialDigitSum(0), 1);
     expect(factorialDigitSum(5), 3);
@@ -83,7 +83,7 @@ void main() {
     expect(factorialDigitSum(100), 648);
   });
 
-  test("nDigitsFibonacciNumber", () {
+  test("#25 nDigitsFibonacciNumber", () {
     expect(() => nDigitFibonacciNumber(-1), throwsAssertion);
     expect(() => nDigitFibonacciNumber(0), throwsAssertion);
     expect(nDigitFibonacciNumber(1), 1);
