@@ -63,6 +63,18 @@ void main() {
     expect(res.maxChainLength, 525);
   });
 
+  test("powerDigitSum", () {
+    expect(() => powerDigitSum(-1, 1), throwsAssertion);
+    expect(() => powerDigitSum(1, -1), throwsAssertion);
+    expect(() => powerDigitSum(-1, -1), throwsAssertion);
+    expect(powerDigitSum(0, 0), 1);
+    expect(powerDigitSum(10, 0), 1);
+    expect(powerDigitSum(0, 10), 0);
+    expect(powerDigitSum(2, 15), 26);
+    expect(powerDigitSum(15, 2), 9);
+    expect(powerDigitSum(2, 1000), 1366);
+  });
+
   test('factorialDigitSum', () {
     expect(() => factorialDigitSum(-1), throwsAssertion);
     expect(factorialDigitSum(0), 1);

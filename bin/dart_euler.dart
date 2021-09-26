@@ -18,6 +18,7 @@ void main() {
       "${result14.longestChainNumber} (${result14.maxChainLength} steps)";
   print("14. Longest Collatz sequence:    $message14");
 
+  print("16. Power digit sum:             ${de.powerDigitSum(2, 1000)}");
   print("20. Factorial digit sum:         ${de.factorialDigitSum(100)}");
   print("25. 1000-digit Fibonacci number: ${de.nDigitFibonacciNumber(1000)}");
 }
