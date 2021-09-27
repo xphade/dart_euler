@@ -1,12 +1,4 @@
-import 'package:dart_euler/src/utilities.dart' show isPrime;
-
-/// Determines the next consecutive prime from the given [number].
-int _nextPrime(int number) {
-  do {
-    number++;
-  } while (!isPrime(number));
-  return number;
-}
+import 'package:dart_euler/src/utilities.dart' show isPrime, nextPrime;
 
 /// Calculates the largest prime factor of the given [number].
 ///
@@ -32,7 +24,7 @@ int largestPrimeFactor(int number) {
     while (number % currentPrimeFactor == 0) {
       number ~/= currentPrimeFactor;
     }
-    currentPrimeFactor = _nextPrime(currentPrimeFactor);
+    currentPrimeFactor = nextPrime(currentPrimeFactor);
   }
 
   // The biggest factor remains.

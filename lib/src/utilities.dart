@@ -58,3 +58,21 @@ bool isPrime(int number) {
 
   return true;
 }
+
+/// Determines the next consecutive prime starting from the given [number].
+///
+/// Examples:
+/// ```dart
+/// nextPrime(-2) == 2  // 2 is always the first prime.
+/// nextPrime(2) == 3
+/// nextPrime(13) == 17
+/// ```
+int nextPrime(int number) {
+  if (number < 2) return 2;
+
+  do {
+    number++;
+  } while (!isPrime(number));
+
+  return number;
+}

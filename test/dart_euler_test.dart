@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dart_euler/dart_euler.dart';
 import 'package:test/test.dart';
 
@@ -58,6 +60,14 @@ void main() {
     expect(sumSquareDifference(1), 0);
     expect(sumSquareDifference(10), 2640);
     expect(sumSquareDifference(100), 25164150);
+  });
+
+  test("#07 computePrime", () {
+    expect(() => computePrime(-1), throwsAssertion);
+    expect(() => computePrime(0), throwsAssertion);
+    expect(computePrime(1), 2);
+    expect(computePrime(6), 13);
+    expect(computePrime(10001), 104743);
   });
 
   test("#08 largestProductInSeries", () {
