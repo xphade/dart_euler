@@ -90,4 +90,13 @@ void main() {
     expect(nDigitFibonacciNumber(3), 12);
     expect(nDigitFibonacciNumber(1000), 4782);
   });
+
+  test("#29 distinctPowers", () {
+    expect(() => distinctPowers(-2, -1), throwsAssertion);
+    expect(() => distinctPowers(0, 1), throwsAssertion);
+    expect(() => distinctPowers(2, 2), throwsAssertion);
+    expect(distinctPowers(1, 2), 3);
+    expect(distinctPowers(2, 5), 15);
+    expect(distinctPowers(2, 100), 9183);
+  });
 }

@@ -1,9 +1,11 @@
+import 'package:dart_euler/src/utilities.dart' show pow;
+
 /// Calculates the sum of digits of [base]^[exponent].
 ///
 /// This is the solution to Project Euler problem 16.
 ///
 /// The function asserts that both [base] and [exponent] are non-negative
-/// integers. For the case 0^0, the function return 1.
+/// integers.
 ///
 /// Examples:
 /// ```dart
@@ -13,17 +15,7 @@
 int powerDigitSum(int base, int exponent) {
   assert(!base.isNegative && !exponent.isNegative);
 
-  // Special case: 0^0 equals 1, so return 1.
-  if (base == 0 && exponent == 0) return 1;
-
-  var number = BigInt.from(1);
-  final bigIntBase = BigInt.from(base);
-
-  // Do not use `math.pow` in order to avoid overflow issues.
-  for (var i = 0; i < exponent; i++) {
-    number *= bigIntBase;
-  }
-
+  final number = pow(base, exponent);
   final digits = number
       .toString()
       .runes

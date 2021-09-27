@@ -21,4 +21,5 @@ void main() {
   print("16. Power digit sum:             ${de.powerDigitSum(2, 1000)}");
   print("20. Factorial digit sum:         ${de.factorialDigitSum(100)}");
   print("25. 1000-digit Fibonacci number: ${de.nDigitFibonacciNumber(1000)}");
+  print("29. Distinct powers:             ${de.distinctPowers(2, 100)}");
 }
