@@ -21,6 +21,16 @@ void main() {
     expect(evenFibonacciNumbers(4000000), 4613732);
   });
 
+  test("#03 largestPrimeFactor", () {
+    expect(() => largestPrimeFactor(-1), throwsAssertion);
+    expect(() => largestPrimeFactor(0), throwsAssertion);
+    expect(() => largestPrimeFactor(1), throwsAssertion);
+    expect(largestPrimeFactor(2), 2);
+    expect(largestPrimeFactor(28), 7);
+    expect(largestPrimeFactor(13195), 29);
+    expect(largestPrimeFactor(600851475143), 6857);
+  });
+
   test("#04 largestPalindromeProduct", () {
     expect(() => largestPalindromeProduct(-1), throwsAssertion);
     expect(() => largestPalindromeProduct(0), throwsAssertion);

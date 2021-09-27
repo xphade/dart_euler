@@ -3,6 +3,8 @@ import 'package:dart_euler/dart_euler.dart' as de;
 void main() {
   print("1.  Multiples of 3 or 5:         ${de.sumOfMultiples(20)}");
   print("2.  Even Fibonacci numbers:      ${de.evenFibonacciNumbers(4000000)}");
+  print("3.  Largest prime factor:        "
+      "${de.largestPrimeFactor(600851475143)}");
 
   final result04 = de.largestPalindromeProduct(3);
   final message04 = result04 == null
