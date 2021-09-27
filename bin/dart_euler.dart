@@ -14,6 +14,7 @@ void main() {
 
   print("5.  Smallest multiple:           ${de.smallestMultiple(1, 20)}");
   print("6.  Sum square difference:       ${de.sumSquareDifference(100)}");
+  print("8.  Largest product in a series: ${de.largestProductInSeries(13)}");
 
   final result14 = de.longestCollatzSequence(1000000);
   final message14 =

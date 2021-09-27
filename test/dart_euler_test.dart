@@ -60,6 +60,17 @@ void main() {
     expect(sumSquareDifference(100), 25164150);
   });
 
+  test("#08 largestProductInSeries", () {
+    expect(() => largestProductInSeries(-2), throwsAssertion);
+    expect(() => largestProductInSeries(0), throwsAssertion);
+    expect(() => largestProductInSeries(1), throwsAssertion);
+    expect(() => largestProductInSeries(1001), throwsAssertion);
+    expect(largestProductInSeries(2), 81);
+    expect(largestProductInSeries(4), 5832);
+    expect(largestProductInSeries(13), 23514624000);
+    expect(largestProductInSeries(100), 0);
+  });
+
   test("#14 longestCollatzSequence", () {
     expect(() => longestCollatzSequence(-1), throwsAssertion);
     expect(() => longestCollatzSequence(0), throwsAssertion);
