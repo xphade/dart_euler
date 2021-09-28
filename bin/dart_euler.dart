@@ -6,16 +6,20 @@ void main() {
   print("3.  Largest prime factor:        "
       "${de.largestPrimeFactor(600851475143)}");
 
-  final result04 = de.largestPalindromeProduct(3);
-  final message04 = result04 == null
-      ? "None"
-      : "${result04.product} (${result04.x} x ${result04.y})";
+  final result04 = de.largestPalindromeProduct(3)!;
+  final message04 = "${result04.product} (${result04.x} x ${result04.y})";
   print("4.  Largest palindrome product:  $message04");
 
   print("5.  Smallest multiple:           ${de.smallestMultiple(1, 20)}");
   print("6.  Sum square difference:       ${de.sumSquareDifference(100)}");
   print("7.  10001st prime:               ${de.computePrime(10001)}");
   print("8.  Largest product in a series: ${de.largestProductInSeries(13)}");
+
+  final result09 = de.specialPythagoreanTriplet(1000)!;
+  final message09 = "${result09.product} "
+      "(a = ${result09.a}, b = ${result09.b}, c = ${result09.c})";
+  print("9.  Special Pythagorean triplet: $message09");
+
   print("10. Summation of primes:         ${de.summationOfPrimes(2000000)}");
 
   final result14 = de.longestCollatzSequence(1000000);

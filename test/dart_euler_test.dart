@@ -79,6 +79,21 @@ void main() {
     expect(largestProductInSeries(100), 0);
   });
 
+  test('#09 specialPythagoreanTriplet', () {
+    expect(() => specialPythagoreanTriplet(-1), throwsAssertion);
+    expect(() => specialPythagoreanTriplet(0), throwsAssertion);
+    expect(() => specialPythagoreanTriplet(5), throwsAssertion);
+
+    expect(specialPythagoreanTriplet(6), isNull);
+    expect(specialPythagoreanTriplet(10), isNull);
+
+    var res = specialPythagoreanTriplet(12);
+    expect(res?.product, 60);
+
+    res = specialPythagoreanTriplet(1000);
+    expect(res?.product, 31875000);
+  });
+
   test('#10 summationOfPrimes', () {
     expect(summationOfPrimes(-2), 0);
     expect(summationOfPrimes(2), 0);
