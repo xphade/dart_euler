@@ -6,6 +6,7 @@ export 'src/problem05.dart';
 export 'src/problem06.dart';
 export 'src/problem07.dart';
 export 'src/problem08.dart';
+export 'src/problem10.dart';
 export 'src/problem14.dart';
 export 'src/problem16.dart';
 export 'src/problem20.dart';

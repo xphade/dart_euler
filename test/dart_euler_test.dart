@@ -79,6 +79,14 @@ void main() {
     expect(largestProductInSeries(100), 0);
   });
 
+  test('#10 summationOfPrimes', () {
+    expect(summationOfPrimes(-2), 0);
+    expect(summationOfPrimes(2), 0);
+    expect(summationOfPrimes(3), 2);
+    expect(summationOfPrimes(10), 17);
+    expect(summationOfPrimes(2000000), 142913828922);
+  });
+
   test('#14 longestCollatzSequence', () {
     expect(() => longestCollatzSequence(-1), throwsAssertion);
     expect(() => longestCollatzSequence(0), throwsAssertion);

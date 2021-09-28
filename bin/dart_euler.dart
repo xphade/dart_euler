@@ -16,6 +16,7 @@ void main() {
   print("6.  Sum square difference:       ${de.sumSquareDifference(100)}");
   print("7.  10001st prime:               ${de.computePrime(10001)}");
   print("8.  Largest product in a series: ${de.largestProductInSeries(13)}");
+  print("10. Summation of primes:         ${de.summationOfPrimes(2000000)}");
 
   final result14 = de.longestCollatzSequence(1000000);
   final message14 =
