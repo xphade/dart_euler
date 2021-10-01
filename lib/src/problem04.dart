@@ -44,8 +44,8 @@ LPPResult? largestPalindromeProduct(int digits) {
   assert(digits > 0);
 
   // Determine start and end number (1-9, 10-99, 100-999, ...).
-  final start = int.parse("1${"0" * (digits - 1)}");
-  final end = int.parse("9" * digits);
+  final start = int.parse('1${'0' * (digits - 1)}');
+  final end = int.parse('9' * digits);
 
   LPPResult? bestCandidate;
 
