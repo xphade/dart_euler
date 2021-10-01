@@ -127,6 +127,16 @@ void main() {
     expect(powerDigitSum(2, 1000), 1366);
   });
 
+  test('#17 numberLetterCounts', () {
+    expect(() => numberLetterCounts(-1, 10), throwsAssertion);
+    expect(() => numberLetterCounts(10, 5), throwsAssertion);
+    expect(() => numberLetterCounts(1, 2000), throwsAssertion);
+    expect(numberLetterCounts(1, 1), 3);
+    expect(numberLetterCounts(1, 5), 19);
+    expect(numberLetterCounts(99, 101), 36);
+    expect(numberLetterCounts(1, 1000), 21124);
+  });
+
   test('#20 factorialDigitSum', () {
     expect(() => factorialDigitSum(-1), throwsAssertion);
     expect(factorialDigitSum(0), 1);
