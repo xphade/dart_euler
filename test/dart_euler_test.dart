@@ -1,4 +1,4 @@
-import 'package:dart_euler/dart_euler.dart';
+import 'package:dart_euler/problems.dart';
 import 'package:test/test.dart';
 
 Matcher throwsAssertion = throwsA(isA<AssertionError>());
