@@ -41,8 +41,7 @@ String _solveSpecificProblem(int number) {
   } else if (number == 29) {
     return distinctPowers(2, 100).toString();
   } else {
-    // Solution not implemented yet
-    return 'Not yet implemented.';
+    return 'Not implemented yet.';
   }
 }
 
@@ -64,4 +63,9 @@ void printAllSolutions() {
   print('20. Factorial digit sum:         ${_solveSpecificProblem(20)}');
   print('25. 1000-digit Fibonacci number: ${_solveSpecificProblem(25)}');
   print('29. Distinct powers:             ${_solveSpecificProblem(29)}');
+}
+
+/// Prints the solution to Project Euler problem [number].
+void printSpecificSolution(int number) {
+  print("Solution to problem $number: ${_solveSpecificProblem(number)}");
 }
