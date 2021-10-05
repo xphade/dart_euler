@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Determines the index of the first Fibonacci number with [nDigits] digits.
 ///
 /// This is the solution to Project Euler problem 25.

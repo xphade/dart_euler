@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:dart_euler/src/utilities.dart';
 
 /// Computes the n-th prime number.

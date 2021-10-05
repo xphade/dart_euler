@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Detects the smallest multiple of all numbers between [low] and [high].
 ///
 /// This is the solution to Project Euler problem 5.

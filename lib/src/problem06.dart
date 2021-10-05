@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'dart:math' show pow;
 
 /// Calculates the sum square difference of all numbers up until [maxNum].

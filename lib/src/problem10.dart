@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:dart_euler/src/utilities.dart' show nextPrime;
 
 /// Returns the sum of all primes smaller than the given [limit].

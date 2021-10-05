@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 export 'package:dart_euler/src/problem01.dart';
 export 'package:dart_euler/src/problem02.dart';
 export 'package:dart_euler/src/problem03.dart';

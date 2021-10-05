@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Creates the word representation of a single-[digit] number.
 String _createSingleDigitWord(int digit) {
   assert(digit >= 0 && digit <= 9);

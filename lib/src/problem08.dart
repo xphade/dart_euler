@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'dart:math' show max;
 
 /// The large number specified for Project Euler problem 8.

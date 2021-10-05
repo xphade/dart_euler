@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Computes the Collatz sequence starting from [startValue].
 List<int> _collatz(int startValue) {
   var sequence = <int>[startValue];

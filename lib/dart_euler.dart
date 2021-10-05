@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:dart_euler/problems.dart';
 
 /// Solves the Project Euler problem [number] and returns it as a string.

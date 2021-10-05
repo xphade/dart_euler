@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'dart:math' show pow, sqrt;
 
 /// Helper class to return the result of [specialPythagoreanTriplet].

@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:collection/collection.dart' show ListEquality;
 
 /// Checks whether two lists contain the same values.

@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Calculates the factorial of [n] through recursion.
 BigInt _factorial(BigInt n) {
   if (n <= BigInt.from(1)) return BigInt.from(1);

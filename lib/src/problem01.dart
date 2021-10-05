@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Calculates the sum of multiples of 3 or 5 for all numbers below [limit].
 ///
 /// This is the solution to Project Euler problem 1.

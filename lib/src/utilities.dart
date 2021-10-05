@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Returns [x] to the power of [exponent] as a [BigInt].
 ///
 /// The function supports only non-negative exponents. It defines `x^0 == 1` for

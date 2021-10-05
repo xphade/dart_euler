@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:args/args.dart';
 import 'package:dart_euler/dart_euler.dart';
 

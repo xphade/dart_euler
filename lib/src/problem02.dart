@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 /// Calculates the sum of all even Fibonacci numbers not exceeding [limit].
 ///
 /// This is the solution to Project Euler problem 2.
