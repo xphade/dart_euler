@@ -105,6 +105,14 @@ void main() {
     expect(summationOfPrimes(2000000), 142913828922);
   });
 
+  test('#12 divisibleTriangleNumber', () {
+    expect(() => divisibleTriangleNumber(-1), throwsAssertion);
+    expect(divisibleTriangleNumber(0), 1);
+    expect(divisibleTriangleNumber(1), 3);
+    expect(divisibleTriangleNumber(4), 28);
+    expect(divisibleTriangleNumber(500), 76576500);
+  });
+
   test('#14 longestCollatzSequence', () {
     expect(() => longestCollatzSequence(-1), throwsAssertion);
     expect(() => longestCollatzSequence(0), throwsAssertion);

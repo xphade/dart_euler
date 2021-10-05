@@ -30,6 +30,8 @@ String _solveSpecificProblem(int number) {
         '(a = ${result.a}, b = ${result.b}, c = ${result.c})';
   } else if (number == 10) {
     return summationOfPrimes(2000000).toString();
+  } else if (number == 12) {
+    return divisibleTriangleNumber(500).toString();
   } else if (number == 14) {
     final result = longestCollatzSequence(1000000);
     return '${result.longestChainNumber} (${result.maxChainLength} steps)';
@@ -50,22 +52,23 @@ String _solveSpecificProblem(int number) {
 
 /// Prints the solutions to all problems.
 void printAllSolutions() {
-  print('1.  Multiples of 3 or 5:         ${_solveSpecificProblem(1)}');
-  print('2.  Even Fibonacci numbers:      ${_solveSpecificProblem(2)}');
-  print('3.  Largest prime factor:        ${_solveSpecificProblem(3)}');
-  print('4.  Largest palindrome product:  ${_solveSpecificProblem(4)}');
-  print('5.  Smallest multiple:           ${_solveSpecificProblem(5)}');
-  print('6.  Sum square difference:       ${_solveSpecificProblem(6)}');
-  print('7.  10001st prime:               ${_solveSpecificProblem(7)}');
-  print('8.  Largest product in a series: ${_solveSpecificProblem(8)}');
-  print('9.  Special Pythagorean triplet: ${_solveSpecificProblem(9)}');
-  print('10. Summation of primes:         ${_solveSpecificProblem(10)}');
-  print('14. Longest Collatz sequence:    ${_solveSpecificProblem(14)}');
-  print('16. Power digit sum:             ${_solveSpecificProblem(16)}');
-  print('17. Number letter counts:        ${_solveSpecificProblem(17)}');
-  print('20. Factorial digit sum:         ${_solveSpecificProblem(20)}');
-  print('25. 1000-digit Fibonacci number: ${_solveSpecificProblem(25)}');
-  print('29. Distinct powers:             ${_solveSpecificProblem(29)}');
+  print('1.  Multiples of 3 or 5:              ${_solveSpecificProblem(1)}');
+  print('2.  Even Fibonacci numbers:           ${_solveSpecificProblem(2)}');
+  print('3.  Largest prime factor:             ${_solveSpecificProblem(3)}');
+  print('4.  Largest palindrome product:       ${_solveSpecificProblem(4)}');
+  print('5.  Smallest multiple:                ${_solveSpecificProblem(5)}');
+  print('6.  Sum square difference:            ${_solveSpecificProblem(6)}');
+  print('7.  10001st prime:                    ${_solveSpecificProblem(7)}');
+  print('8.  Largest product in a series:      ${_solveSpecificProblem(8)}');
+  print('9.  Special Pythagorean triplet:      ${_solveSpecificProblem(9)}');
+  print('10. Summation of primes:              ${_solveSpecificProblem(10)}');
+  print('12. Highly divisible triangle number: ${_solveSpecificProblem(12)}');
+  print('14. Longest Collatz sequence:         ${_solveSpecificProblem(14)}');
+  print('16. Power digit sum:                  ${_solveSpecificProblem(16)}');
+  print('17. Number letter counts:             ${_solveSpecificProblem(17)}');
+  print('20. Factorial digit sum:              ${_solveSpecificProblem(20)}');
+  print('25. 1000-digit Fibonacci number:      ${_solveSpecificProblem(25)}');
+  print('29. Distinct powers:                  ${_solveSpecificProblem(29)}');
 }
 
 /// Prints the solution to Project Euler problem [number].
