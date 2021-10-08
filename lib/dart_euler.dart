@@ -45,6 +45,8 @@ String _solveSpecificProblem(int number) {
     return nDigitFibonacciNumber(1000).toString();
   } else if (number == 29) {
     return distinctPowers(2, 100).toString();
+  } else if (number == 36) {
+    return doubleBasePalindromes(1000000).toString();
   } else {
     return 'Not implemented yet.';
   }
@@ -69,6 +71,7 @@ void printAllSolutions() {
   print('20. Factorial digit sum:              ${_solveSpecificProblem(20)}');
   print('25. 1000-digit Fibonacci number:      ${_solveSpecificProblem(25)}');
   print('29. Distinct powers:                  ${_solveSpecificProblem(29)}');
+  print('36. Double-base palindromes:          ${_solveSpecificProblem(36)}');
 }
 
 /// Prints the solution to Project Euler problem [number].

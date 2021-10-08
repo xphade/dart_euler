@@ -172,4 +172,13 @@ void main() {
     expect(distinctPowers(2, 5), 15);
     expect(distinctPowers(2, 100), 9183);
   });
+
+  test('#36 doubleBasePalindromes', () {
+    expect(() => doubleBasePalindromes(-1), throwsAssertion);
+    expect(() => doubleBasePalindromes(0), throwsAssertion);
+    expect(() => doubleBasePalindromes(1), throwsAssertion);
+    expect(doubleBasePalindromes(2), 1);
+    expect(doubleBasePalindromes(10), 25);
+    expect(doubleBasePalindromes(1000000), 872187);
+  });
 }
