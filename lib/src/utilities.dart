@@ -1,6 +1,8 @@
 // Copyright (c) 2021, xphade
 // SPDX-License-Identifier: MIT
 
+import 'package:collection/collection.dart' show ListEquality;
+
 /// Returns [x] to the power of [exponent] as a [BigInt].
 ///
 /// The function supports only non-negative exponents. It defines `x^0 == 1` for
@@ -78,4 +80,54 @@ int nextPrime(int number) {
   } while (!isPrime(number));
 
   return number;
+}
+
+/// Checks whether two lists contain the same values.
+Function _listsEqual = const ListEquality().equals;
+
+/// Checks if the given [term] is a palindrome.
+///
+/// A palindrome is a term which reads the same in both ways. The [term] can
+/// contain arbitrary characters including spaces and punctuation. If the
+/// optional [ignoreCase] is set to `true`, the function will treat upper and
+/// lower case characters equally. If the given [term] is empty, the function
+/// always returns `false`.
+///
+/// Note that the function is written using `codeUnits`, so it will only work
+/// with 16-bit characters.
+///
+/// Examples:
+/// ```dart
+/// isPalindrome("racecar") == true
+/// isPalindrome("step on no pets") == true
+/// isPalindrome("Racecar") == false
+/// isPalindrome("Racecar", ignoreCase: true) == true
+/// ```
+bool isPalindrome(String term, {bool ignoreCase = false}) {
+  if (term.isEmpty) return false;
+  if (ignoreCase) term = term.toLowerCase();
+
+  final codeUnits = term.codeUnits;
+  final unitsReversed = List.from(codeUnits.reversed);
+
+  return _listsEqual(codeUnits, unitsReversed);
+}
+
+/// Checks if the given [number] is a palindrome.
+///
+/// A palindromic number reads the same in both ways. The function has an
+/// optional parameter [base] with which the user can specify the desired base
+/// of the number (defaults to 10). If the given [number] is negative, the
+/// function will always return `false`.
+///
+/// Examples:
+/// ```dart
+/// isPalindromicNumber(1) == true
+/// isPalindromicNumber(21) == false
+/// isPalindromicNumber(232) == true
+/// isPalindromicNumber(27, base: 2) == true // 27 is 11011 in binary.
+/// ```
+bool isPalindromicNumber(int number, {int base = 10}) {
+  if (number.isNegative) return false;
+  return isPalindrome(number.toRadixString(base));
 }

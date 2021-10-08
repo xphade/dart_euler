@@ -1,23 +1,7 @@
 // Copyright (c) 2021, xphade
 // SPDX-License-Identifier: MIT
 
-import 'package:collection/collection.dart' show ListEquality;
-
-/// Checks whether two lists contain the same values.
-Function _listsEqual = const ListEquality().equals;
-
-/// Returns `true` if the given [number] is a palindrome.
-bool _isPalindrome(int number) {
-  var digits = <int>[];
-
-  while (number > 0) {
-    final digit = number % 10;
-    number ~/= 10;
-    digits.add(digit);
-  }
-
-  return _listsEqual(digits, List.from(digits.reversed));
-}
+import 'package:dart_euler/src/utilities.dart';
 
 /// Helper class to return the result of [largestPalindromeProduct].
 class LPPResult {
@@ -26,7 +10,7 @@ class LPPResult {
 
   LPPResult(this.x, this.y);
   int get product => x * y;
-  bool get isPalindrome => _isPalindrome(product);
+  bool get isPalindrome => isPalindromicNumber(product);
 }
 
 /// Calculates the largest palindrome from a product of two numbers.

@@ -89,4 +89,54 @@ void main() {
     expect(nextPrime(13), 17);
     expect(nextPrime(7000), 7001);
   });
+
+  group('isPalindrome', () {
+    test('case-sensitive', () {
+      expect(isPalindrome(''), false);
+      expect(isPalindrome('dart'), false);
+      expect(isPalindrome('racecar'), true);
+      expect(isPalindrome('Racecar'), false);
+      expect(isPalindrome('RaCeCaR'), true);
+      expect(isPalindrome('step on no pets'), true);
+      expect(isPalindrome('Step on no Pets'), false);
+    });
+
+    test('case-insensitive', () {
+      expect(isPalindrome('', ignoreCase: true), false);
+      expect(isPalindrome('Euler', ignoreCase: true), false);
+      expect(isPalindrome('Level', ignoreCase: true), true);
+      expect(isPalindrome('roTOR', ignoreCase: true), true);
+      expect(isPalindrome('Rats Live on no Evil Star', ignoreCase: true), true);
+    });
+  });
+
+  group('isPalindromicNumber', () {
+    test('decimal', () {
+      expect(isPalindromicNumber(-1), false);
+      expect(isPalindromicNumber(1), true);
+      expect(isPalindromicNumber(24), false);
+      expect(isPalindromicNumber(33), true);
+      expect(isPalindromicNumber(12345), false);
+      expect(isPalindromicNumber(2648462), true);
+    });
+    test('binary', () {
+      expect(isPalindromicNumber(int.parse('1', radix: 2), base: 2), true);
+      expect(isPalindromicNumber(int.parse('10', radix: 2), base: 2), false);
+      expect(isPalindromicNumber(int.parse('11', radix: 2), base: 2), true);
+      expect(isPalindromicNumber(int.parse('100', radix: 2), base: 2), false);
+      expect(isPalindromicNumber(int.parse('101', radix: 2), base: 2), true);
+      expect(
+          isPalindromicNumber(int.parse('11101101', radix: 2), base: 2), false);
+      expect(
+          isPalindromicNumber(int.parse('10100101', radix: 2), base: 2), true);
+    });
+    test('hexadecimal', () {
+      expect(isPalindromicNumber(0x1, base: 16), true);
+      expect(isPalindromicNumber(0xB, base: 16), true);
+      expect(isPalindromicNumber(0xC4, base: 16), false);
+      expect(isPalindromicNumber(0xDD, base: 16), true);
+      expect(isPalindromicNumber(0x1F356, base: 16), false);
+      expect(isPalindromicNumber(0xE535E, base: 16), true);
+    });
+  });
 }
