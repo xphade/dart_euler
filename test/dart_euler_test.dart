@@ -173,6 +173,15 @@ void main() {
     expect(distinctPowers(2, 100), 9183);
   });
 
+  test('#35 circularPrimes', () {
+    expect(circularPrimes(-1), 0);
+    expect(circularPrimes(0), 0);
+    expect(circularPrimes(2), 0);
+    expect(circularPrimes(3), 1);
+    expect(circularPrimes(100), 13);
+    expect(circularPrimes(1000000), 55);
+  });
+
   test('#36 doubleBasePalindromes', () {
     expect(() => doubleBasePalindromes(-1), throwsAssertion);
     expect(() => doubleBasePalindromes(0), throwsAssertion);
