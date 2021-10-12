@@ -1,3 +1,6 @@
+// Copyright (c) 2021, xphade
+// SPDX-License-Identifier: MIT
+
 import 'package:dart_euler/src/utilities.dart';
 
 /// Returns the sum of palindromic numbers in base 2 and 10 up until [limit].
