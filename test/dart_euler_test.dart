@@ -190,4 +190,13 @@ void main() {
     expect(doubleBasePalindromes(10), 25);
     expect(doubleBasePalindromes(1000000), 872187);
   });
+
+  test('#45 triangularPentagonalHexagonal', () {
+    expect(() => triangularPentagonalHexagonal(-1), throwsAssertion);
+    expect(() => triangularPentagonalHexagonal(0), throwsAssertion);
+    expect(triangularPentagonalHexagonal(1), 1);
+    expect(triangularPentagonalHexagonal(2), 40755);
+    expect(triangularPentagonalHexagonal(100), 40755);
+    expect(triangularPentagonalHexagonal(286), 1533776805);
+  });
 }
