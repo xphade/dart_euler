@@ -117,6 +117,16 @@ void main() {
     expect(divisibleTriangleNumber(500), 76576500);
   });
 
+  test('#13 largeSum', () {
+    expect(() => largeSum(-1), throwsAssertion);
+    expect(() => largeSum(0), throwsAssertion);
+    expect(largeSum(1), BigInt.from(5));
+    expect(largeSum(2), BigInt.from(55));
+    expect(largeSum(10), BigInt.from(5537376230));
+    expect(largeSum(100),
+        BigInt.parse("5537376230390876637302048746832985971773659831892672"));
+  });
+
   test('#14 longestCollatzSequence', () {
     expect(() => longestCollatzSequence(-1), throwsAssertion);
     expect(() => longestCollatzSequence(0), throwsAssertion);

@@ -34,6 +34,8 @@ String _solveSpecificProblem(int number) {
     return largestProductInGrid().toString();
   } else if (number == 12) {
     return divisibleTriangleNumber(500).toString();
+  } else if (number == 13) {
+    return largeSum(10).toString();
   } else if (number == 14) {
     final result = longestCollatzSequence(1000000);
     return '${result.longestChainNumber} (${result.maxChainLength} steps)';
@@ -72,6 +74,7 @@ void printAllSolutions() {
   print('10. Summation of primes:               ${_solveSpecificProblem(10)}');
   print('11. Largest product in a grid:         ${_solveSpecificProblem(11)}');
   print('12. Highly divisible triangle number:  ${_solveSpecificProblem(12)}');
+  print('13. Large sum:                         ${_solveSpecificProblem(13)}');
   print('14. Longest Collatz sequence:          ${_solveSpecificProblem(14)}');
   print('16. Power digit sum:                   ${_solveSpecificProblem(16)}');
   print('17. Number letter counts:              ${_solveSpecificProblem(17)}');
