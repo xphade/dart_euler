@@ -30,6 +30,8 @@ String _solveSpecificProblem(int number) {
         '(a = ${result.a}, b = ${result.b}, c = ${result.c})';
   } else if (number == 10) {
     return summationOfPrimes(2000000).toString();
+  } else if (number == 11) {
+    return largestProductInGrid().toString();
   } else if (number == 12) {
     return divisibleTriangleNumber(500).toString();
   } else if (number == 14) {
@@ -68,6 +70,7 @@ void printAllSolutions() {
   print('8.  Largest product in a series:       ${_solveSpecificProblem(8)}');
   print('9.  Special Pythagorean triplet:       ${_solveSpecificProblem(9)}');
   print('10. Summation of primes:               ${_solveSpecificProblem(10)}');
+  print('11. Largest product in a grid:         ${_solveSpecificProblem(11)}');
   print('12. Highly divisible triangle number:  ${_solveSpecificProblem(12)}');
   print('14. Longest Collatz sequence:          ${_solveSpecificProblem(14)}');
   print('16. Power digit sum:                   ${_solveSpecificProblem(16)}');

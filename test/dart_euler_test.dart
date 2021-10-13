@@ -105,6 +105,10 @@ void main() {
     expect(summationOfPrimes(2000000), 142913828922);
   });
 
+  test('#11 largestProductInGrid', () {
+    expect(largestProductInGrid(), 70600674);
+  });
+
   test('#12 divisibleTriangleNumber', () {
     expect(() => divisibleTriangleNumber(-1), throwsAssertion);
     expect(divisibleTriangleNumber(0), 1);
