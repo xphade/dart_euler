@@ -43,6 +43,8 @@ String _solveSpecificProblem(int number) {
     return powerDigitSum(2, 1000).toString();
   } else if (number == 17) {
     return numberLetterCounts(1, 1000).toString();
+  } else if (number == 18) {
+    return maximumPathSum(14).toString();
   } else if (number == 20) {
     return factorialDigitSum(100).toString();
   } else if (number == 25) {
@@ -78,6 +80,7 @@ void printAllSolutions() {
   print('14. Longest Collatz sequence:          ${_solveSpecificProblem(14)}');
   print('16. Power digit sum:                   ${_solveSpecificProblem(16)}');
   print('17. Number letter counts:              ${_solveSpecificProblem(17)}');
+  print('18. Maximum path sum I:                ${_solveSpecificProblem(18)}');
   print('20. Factorial digit sum:               ${_solveSpecificProblem(20)}');
   print('25. 1000-digit Fibonacci number:       ${_solveSpecificProblem(25)}');
   print('29. Distinct powers:                   ${_solveSpecificProblem(29)}');

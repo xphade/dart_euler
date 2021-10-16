@@ -162,6 +162,15 @@ void main() {
     expect(numberLetterCounts(1, 1000), 21124);
   });
 
+  test('#18 maximumPathSum', () {
+    expect(() => maximumPathSum(-1), throwsAssertion);
+    expect(maximumPathSum(0), 75);
+    expect(maximumPathSum(1), 170);
+    expect(maximumPathSum(2), 221);
+    expect(maximumPathSum(14), 1074);
+    expect(maximumPathSum(28), 1074);
+  });
+
   test('#20 factorialDigitSum', () {
     expect(() => factorialDigitSum(-1), throwsAssertion);
     expect(factorialDigitSum(0), 1);
