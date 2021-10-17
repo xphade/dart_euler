@@ -214,6 +214,11 @@ void main() {
     expect(doubleBasePalindromes(1000000), 872187);
   });
 
+  test('#42 codedTriangleNumbers', () {
+    expect(() => codedTriangleNumbers('/non/existing/path'), throwsAssertion);
+    expect(codedTriangleNumbers('lib/res/p042_words.txt'), 162);
+  });
+
   test('#45 triangularPentagonalHexagonal', () {
     expect(() => triangularPentagonalHexagonal(-1), throwsAssertion);
     expect(() => triangularPentagonalHexagonal(0), throwsAssertion);
