@@ -1,6 +1,7 @@
 // Copyright (c) 2021, xphade
 // SPDX-License-Identifier: MIT
 
+import 'dart:math' show sqrt;
 import 'package:collection/collection.dart' show ListEquality;
 
 /// Returns [x] to the power of [exponent] as a [BigInt].
@@ -130,4 +131,27 @@ bool isPalindrome(String term, {bool ignoreCase = false}) {
 bool isPalindromicNumber(int number, {int base = 10}) {
   if (number.isNegative) return false;
   return isPalindrome(number.toRadixString(base));
+}
+
+/// Checks if the given [number] is a perfect square.
+///
+/// A perfect square is defined as a (non-negative) natural number that is the
+/// exact square of another such number, i.e. the product of some integer with
+/// itself.
+///
+/// Note that this specific implementation may run into numerical problems if
+/// the [number] gets very large. However, it should work fine for our input
+/// domains.
+///
+/// Examples:
+/// ```dart
+/// isPerfectSquare(4) == true   // 4 = 2 * 2
+/// isPerfectSquare(9) == true   // 9 = 3 * 3
+/// isPerfectSquare(-1) == false
+/// isPerfectSquare(10) == false
+/// ```
+bool isPerfectSquare(int number) {
+  if (number.isNegative) return false;
+  final root = sqrt(number).toInt();
+  return root * root == number;
 }

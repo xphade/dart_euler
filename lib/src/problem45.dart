@@ -2,20 +2,12 @@
 // SPDX-License-Identifier: MIT
 
 import 'dart:math' show sqrt;
+import 'package:dart_euler/src/utilities.dart' show isPerfectSquare;
 
 /// Returns the [n]-th triangle number.
 ///
 /// A triangular number `T_n` is defined as `T_n = n * (n + 1) / 2`.
 int _calculateTriangularNumber(int n) => n * (n + 1) ~/ 2;
-
-/// Checks if the given [number] is a perfect square.
-///
-/// Note that the implementation may run into numerical problems if the [number]
-/// gets very large. However, it works just fine for our input domain.
-bool _isPerfectSquare(int number) {
-  final root = sqrt(number).toInt();
-  return root * root == number;
-}
 
 /// Checks if the given [number] is pentagonal.
 ///
@@ -25,7 +17,7 @@ bool _isPerfectSquare(int number) {
 /// exists a natural number `n` that fulfills `n = (sqrt(24 * P + 1) + 1) / 6`.
 bool _isPentagonal(int number) {
   final temp = (24 * number) + 1;
-  if (!_isPerfectSquare(temp)) return false;
+  if (!isPerfectSquare(temp)) return false;
   return (sqrt(temp) + 1) % 6 == 0;
 }
 
@@ -37,7 +29,7 @@ bool _isPentagonal(int number) {
 /// natural number `n` that fulfills `n = (sqrt(8 * H + 1) + 1) / 4`.
 bool _isHexagonal(int number) {
   final temp = (8 * number) + 1;
-  if (!_isPerfectSquare(temp)) return false;
+  if (!isPerfectSquare(temp)) return false;
   return (sqrt(temp) + 1) % 4 == 0;
 }
 

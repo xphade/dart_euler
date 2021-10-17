@@ -139,4 +139,19 @@ void main() {
       expect(isPalindromicNumber(0xE535E, base: 16), true);
     });
   });
+
+  test('isPerfectSquare', () {
+    expect(isPerfectSquare(-4), false);
+    expect(isPerfectSquare(-1), false);
+    expect(isPerfectSquare(0), true); // 0 * 0
+    expect(isPerfectSquare(1), true); // 1 * 1
+    expect(isPerfectSquare(4), true); // 2 * 2
+    expect(isPerfectSquare(25), true); // 5  * 5
+    expect(isPerfectSquare(225), true); // 15 * 15
+    expect(isPerfectSquare(1764), true); // 42 * 42
+    expect(isPerfectSquare(6), false);
+    expect(isPerfectSquare(17), false);
+    expect(isPerfectSquare(420), false);
+    expect(isPerfectSquare(2100), false);
+  });
 }
