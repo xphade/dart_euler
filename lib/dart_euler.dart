@@ -45,6 +45,9 @@ String _solveSpecificProblem(int number) {
     return numberLetterCounts(1, 1000).toString();
   } else if (number == 18) {
     return maximumPathSum(14).toString();
+  } else if (number == 19) {
+    return countSundaysOnFirst(DateTime(1901, 01, 01), DateTime(2000, 12, 31))
+        .toString();
   } else if (number == 20) {
     return factorialDigitSum(100).toString();
   } else if (number == 25) {
@@ -83,6 +86,7 @@ void printAllSolutions() {
   print('16. Power digit sum:                   ${_solveSpecificProblem(16)}');
   print('17. Number letter counts:              ${_solveSpecificProblem(17)}');
   print('18. Maximum path sum I:                ${_solveSpecificProblem(18)}');
+  print('19. Counting Sundays:                  ${_solveSpecificProblem(19)}');
   print('20. Factorial digit sum:               ${_solveSpecificProblem(20)}');
   print('25. 1000-digit Fibonacci number:       ${_solveSpecificProblem(25)}');
   print('29. Distinct powers:                   ${_solveSpecificProblem(29)}');

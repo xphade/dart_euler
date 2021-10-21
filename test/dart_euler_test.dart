@@ -171,6 +171,23 @@ void main() {
     expect(maximumPathSum(28), 1074);
   });
 
+  test('#19 countSundaysOnFirst', () {
+    expect(
+        () =>
+            countSundaysOnFirst(DateTime(2021, 10, 21), DateTime(2021, 10, 20)),
+        throwsAssertion);
+    expect(
+        () =>
+            countSundaysOnFirst(DateTime(2021, 10, 21), DateTime(2021, 10, 21)),
+        throwsAssertion);
+    expect(
+        countSundaysOnFirst(DateTime(2021, 01, 01), DateTime(2021, 06, 30)), 0);
+    expect(
+        countSundaysOnFirst(DateTime(2021, 07, 01), DateTime(2021, 12, 31)), 1);
+    expect(countSundaysOnFirst(DateTime(1901, 01, 01), DateTime(2000, 12, 31)),
+        171);
+  });
+
   test('#20 factorialDigitSum', () {
     expect(() => factorialDigitSum(-1), throwsAssertion);
     expect(factorialDigitSum(0), 1);
