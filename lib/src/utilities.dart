@@ -155,3 +155,41 @@ bool isPerfectSquare(int number) {
   final root = sqrt(number).toInt();
   return root * root == number;
 }
+
+/// Returns all divisors of the given [number].
+///
+/// This function returns all factors of any positive natural [number]. If
+/// desired, the returned list is guaranteed to be [sorted]. The naive solution
+/// to find divisors would be to check every integer from 1 to [number] / 2.
+/// However, since all divisors are present in pairs, it is enough to check the
+/// range from 1 to sqrt([number]).
+///
+/// The function asserts that the given [number] is at least 1.
+///
+/// Examples:
+/// ```dart
+/// getDivisors(1) == [1]
+/// getDivisors(8) == [1, 8, 2, 4]
+/// getDivisors(8, sorted: true) == [1, 2, 4, 8]
+/// getDivisors(17) == [1, 17]
+/// ```
+List<int> getDivisors(int number, {sorted = false}) {
+  assert(number > 0);
+
+  // If the [number] is a prime, there can only be two divisors.
+  if (isPrime(number)) return [1, number];
+
+  final divisors = <int>[];
+  for (var i = 1; i * i <= number; i++) {
+    if (number % i == 0) {
+      divisors.add(i);
+
+      // Add the paired factor if it is not equal.
+      final pair = number ~/ i;
+      if (pair != i) divisors.add(pair);
+    }
+  }
+
+  if (sorted) divisors.sort();
+  return divisors;
+}

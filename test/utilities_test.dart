@@ -154,4 +154,34 @@ void main() {
     expect(isPerfectSquare(420), false);
     expect(isPerfectSquare(2100), false);
   });
+
+  group('getDivisors', () {
+    test('numbers < 2', () {
+      expect(() => getDivisors(-5), throwsAssertion);
+      expect(() => getDivisors(-4), throwsAssertion);
+      expect(() => getDivisors(-1), throwsAssertion);
+      expect(() => getDivisors(0), throwsAssertion);
+      expect(getDivisors(1), [1]);
+    });
+    test('composite numbers', () {
+      expect(getDivisors(4)..sort(), [1, 2, 4]);
+      expect(getDivisors(9)..sort(), [1, 3, 9]);
+      expect(getDivisors(15)..sort(), [1, 3, 5, 15]);
+      expect(getDivisors(28)..sort(), [1, 2, 4, 7, 14, 28]);
+      expect(getDivisors(100)..sort(), [1, 2, 4, 5, 10, 20, 25, 50, 100]);
+    });
+    test('prime numbers', () {
+      expect(getDivisors(2), [1, 2]);
+      expect(getDivisors(3), [1, 3]);
+      expect(getDivisors(17), [1, 17]);
+      expect(getDivisors(101), [1, 101]);
+    });
+    test('sorted', () {
+      expect(getDivisors(8), [1, 8, 2, 4]);
+      expect(getDivisors(8, sorted: false), [1, 8, 2, 4]);
+      expect(getDivisors(8, sorted: true), [1, 2, 4, 8]);
+      expect(getDivisors(13, sorted: false), [1, 13]);
+      expect(getDivisors(13, sorted: true), [1, 13]);
+    });
+  });
 }

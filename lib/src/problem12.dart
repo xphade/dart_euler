@@ -1,21 +1,7 @@
 // Copyright (c) 2021, xphade
 // SPDX-License-Identifier: MIT
 
-/// Counts the divisors of the given [number].
-///
-/// The naive solution to count the divisors would be to check every integer
-/// from 1 to [number]. However, since all divisors are present in pairs, it
-/// is enough to check the range from 1 to sqrt([number]).
-int _countDivisors(int number) {
-  var sum = 0;
-  for (var i = 1; i * i <= number; i++) {
-    if (number % i == 0) {
-      // Increment by 1 if the divisors are equal, otherwise count both.
-      sum += (number / i == i) ? 1 : 2;
-    }
-  }
-  return sum;
-}
+import 'package:dart_euler/src/utilities.dart' show getDivisors;
 
 /// Determines the first triangle number with more than [threshold] divisors.
 ///
@@ -43,7 +29,7 @@ int divisibleTriangleNumber(int threshold) {
   while (numberOfDivisors <= threshold) {
     triangleNumber += counter;
     counter++;
-    numberOfDivisors = _countDivisors(triangleNumber);
+    numberOfDivisors = getDivisors(triangleNumber).length;
   }
 
   return triangleNumber;
