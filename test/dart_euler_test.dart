@@ -196,6 +196,17 @@ void main() {
     expect(factorialDigitSum(100), 648);
   });
 
+  test('#21 sumOfAmicableNumbers', () {
+    expect(() => sumOfAmicableNumbers(-10), throwsAssertion);
+    expect(sumOfAmicableNumbers(0), 0);
+    expect(sumOfAmicableNumbers(10), 0);
+    expect(sumOfAmicableNumbers(100), 0);
+    expect(sumOfAmicableNumbers(250), 220);
+    expect(sumOfAmicableNumbers(300), 504);
+    expect(sumOfAmicableNumbers(1000), 504);
+    expect(sumOfAmicableNumbers(10000), 31626);
+  });
+
   test('#25 nDigitsFibonacciNumber', () {
     expect(() => nDigitFibonacciNumber(-1), throwsAssertion);
     expect(() => nDigitFibonacciNumber(0), throwsAssertion);

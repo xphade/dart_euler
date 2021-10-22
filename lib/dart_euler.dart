@@ -50,6 +50,8 @@ String _solveSpecificProblem(int number) {
         .toString();
   } else if (number == 20) {
     return factorialDigitSum(100).toString();
+  } else if (number == 21) {
+    return sumOfAmicableNumbers(10000).toString();
   } else if (number == 25) {
     return nDigitFibonacciNumber(1000).toString();
   } else if (number == 29) {
@@ -88,6 +90,7 @@ void printAllSolutions() {
   print('18. Maximum path sum I:                ${_solveSpecificProblem(18)}');
   print('19. Counting Sundays:                  ${_solveSpecificProblem(19)}');
   print('20. Factorial digit sum:               ${_solveSpecificProblem(20)}');
+  print('21. Amicable numbers:                  ${_solveSpecificProblem(21)}');
   print('25. 1000-digit Fibonacci number:       ${_solveSpecificProblem(25)}');
   print('29. Distinct powers:                   ${_solveSpecificProblem(29)}');
   print('35. Circular primes:                   ${_solveSpecificProblem(35)}');
