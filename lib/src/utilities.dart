@@ -193,3 +193,35 @@ List<int> getDivisors(int number, {sorted = false}) {
   if (sorted) divisors.sort();
   return divisors;
 }
+
+/// Calculates the alphabetical value of the given [term].
+///
+/// The function computes the alphabetical value (where 'A' = 1, 'B' = 2, ...)
+/// of the given [term] and returns the result. It expects all characters of the
+/// [term] to be in the same case which is defined by [upperCase]. Optionally,
+/// if the characters have mixed case, the function can [convert] the [term] so
+/// that all characters have equal case.
+///
+/// Note that the function only works properly if the [term] exclusively
+/// contains letters, i.e. it will not give a meaningful result if it contains
+/// any special characters or digits.
+///
+/// Examples:
+/// ```dart
+/// calculateAlphabeticalValue('') == 0
+/// // 'ABC' => 1 + 2 + 3 = 6
+/// calculateAlphabeticalValue('ABC') == 6
+/// calculateAlphabeticalValue('abc', upperCase: false) == 6
+/// calculateAlphabeticalValue('aBc', convert: true) == 6
+/// ```
+int calculateAlphabeticalValue(String term,
+    {bool upperCase = true, bool convert = false}) {
+  if (term.isEmpty) return 0;
+
+  if (convert) term = upperCase ? term.toUpperCase() : term.toLowerCase();
+
+  // Determine offset such that character 'A' / 'a' has a value of 1.
+  final offset = (upperCase ? 'A' : 'a').codeUnits.first - 1;
+  return term.codeUnits
+      .fold(0, (totalValue, codeUnit) => totalValue + (codeUnit - offset));
+}

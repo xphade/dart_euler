@@ -184,4 +184,25 @@ void main() {
       expect(getDivisors(13, sorted: true), [1, 13]);
     });
   });
+
+  group('calculateAlphabeticalValue', () {
+    test('upperCase', () {
+      expect(calculateAlphabeticalValue(''), 0);
+      expect(calculateAlphabeticalValue('A'), 1);
+      expect(calculateAlphabeticalValue('DART'), 43);
+    });
+    test('lowerCase', () {
+      expect(calculateAlphabeticalValue('', upperCase: false), 0);
+      expect(calculateAlphabeticalValue('a', upperCase: false), 1);
+      expect(calculateAlphabeticalValue('dart', upperCase: false), 43);
+    });
+    test('convert', () {
+      expect(calculateAlphabeticalValue('', convert: true), 0);
+      expect(calculateAlphabeticalValue('A', convert: true), 1);
+      expect(calculateAlphabeticalValue('DaRt', convert: true), 43);
+      expect(
+          calculateAlphabeticalValue('dArT', upperCase: false, convert: true),
+          43);
+    });
+  });
 }

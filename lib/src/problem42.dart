@@ -3,7 +3,8 @@
 
 import 'dart:io';
 import 'dart:math' show sqrt;
-import 'package:dart_euler/src/utilities.dart' show isPerfectSquare;
+import 'package:dart_euler/src/utilities.dart'
+    show isPerfectSquare, calculateAlphabeticalValue;
 
 /// Checks if the given [number] is triangular.
 ///
@@ -15,15 +16,6 @@ bool _isTriangular(int number) {
   final temp = (8 * number) + 1;
   if (!isPerfectSquare(temp)) return false;
   return (sqrt(temp) - 1) % 2 == 0;
-}
-
-/// Calculates the numerical value of the given [word].
-int _calculateWordValue(String word) {
-  // Determine the offset such that the character 'A' has a value of 1.
-  final offset = 'A'.codeUnits.first - 1;
-  return word.codeUnits
-      .map((characterValue) => characterValue - offset)
-      .fold(0, (previousValue, currentValue) => previousValue + currentValue);
 }
 
 /// Counts the words with a triangular numerical value in a given file.
@@ -45,7 +37,7 @@ int codedTriangleNumbers(String path) {
 
   int triangleWordCount = 0;
   for (final word in words) {
-    final value = _calculateWordValue(word);
+    final value = calculateAlphabeticalValue(word);
     if (_isTriangular(value)) triangleWordCount++;
   }
   return triangleWordCount;
