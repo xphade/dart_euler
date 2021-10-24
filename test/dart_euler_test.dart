@@ -207,6 +207,11 @@ void main() {
     expect(sumOfAmicableNumbers(10000), 31626);
   });
 
+  test('#22 sumOfNameScores', () {
+    expect(() => sumOfNameScores('/non/existing/path'), throwsAssertion);
+    expect(sumOfNameScores('lib/res/p022_names.txt'), 871198282);
+  });
+
   test('#25 nDigitsFibonacciNumber', () {
     expect(() => nDigitFibonacciNumber(-1), throwsAssertion);
     expect(() => nDigitFibonacciNumber(0), throwsAssertion);
