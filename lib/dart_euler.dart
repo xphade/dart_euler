@@ -39,6 +39,8 @@ String _solveSpecificProblem(int number) {
   } else if (number == 14) {
     final result = longestCollatzSequence(1000000);
     return '${result.longestChainNumber} (${result.maxChainLength} steps)';
+  } else if (number == 15) {
+    return countLatticePaths(20).toString();
   } else if (number == 16) {
     return powerDigitSum(2, 1000).toString();
   } else if (number == 17) {
@@ -87,6 +89,7 @@ void printAllSolutions() {
   print('12. Highly divisible triangle number:  ${_solveSpecificProblem(12)}');
   print('13. Large sum:                         ${_solveSpecificProblem(13)}');
   print('14. Longest Collatz sequence:          ${_solveSpecificProblem(14)}');
+  print('15. Lattice paths:                     ${_solveSpecificProblem(15)}');
   print('16. Power digit sum:                   ${_solveSpecificProblem(16)}');
   print('17. Number letter counts:              ${_solveSpecificProblem(17)}');
   print('18. Maximum path sum I:                ${_solveSpecificProblem(18)}');

@@ -140,6 +140,14 @@ void main() {
     expect(res.maxChainLength, 525);
   });
 
+  test('#15 countLatticePaths', () {
+    expect(() => countLatticePaths(-1), throwsAssertion);
+    expect(() => countLatticePaths(0), throwsAssertion);
+    expect(countLatticePaths(1), 2);
+    expect(countLatticePaths(2), 6);
+    expect(countLatticePaths(20), 137846528820);
+  });
+
   test('#16 powerDigitSum', () {
     expect(() => powerDigitSum(-1, 1), throwsAssertion);
     expect(() => powerDigitSum(1, -1), throwsAssertion);
