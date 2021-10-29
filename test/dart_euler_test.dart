@@ -228,6 +228,17 @@ void main() {
     expect(nDigitFibonacciNumber(1000), 4782);
   });
 
+  test('#28 sumOfSpiralDiagonals', () {
+    expect(() => sumOfSpiralDiagonals(-1), throwsAssertion);
+    expect(() => sumOfSpiralDiagonals(0), throwsAssertion);
+    expect(sumOfSpiralDiagonals(1), 1);
+    expect(sumOfSpiralDiagonals(2), 10);
+    expect(sumOfSpiralDiagonals(3), 25);
+    expect(sumOfSpiralDiagonals(4), 56);
+    expect(sumOfSpiralDiagonals(5), 101);
+    expect(sumOfSpiralDiagonals(1001), 669171001);
+  });
+
   test('#29 distinctPowers', () {
     expect(() => distinctPowers(-2, -1), throwsAssertion);
     expect(() => distinctPowers(0, 1), throwsAssertion);
