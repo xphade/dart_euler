@@ -225,3 +225,68 @@ int calculateAlphabeticalValue(String term,
   return term.codeUnits
       .fold(0, (totalValue, codeUnit) => totalValue + (codeUnit - offset));
 }
+
+/// Generates all permutations of the list of [elements] in a recursive way.
+///
+/// This function generates all permutations of the given [elements] and
+/// combines them with the [currentPermutation]. It adds the newly created
+/// permutations to the list of [allPermutations] and returns it.
+///
+/// The first invocation of the function should only contain a list of
+/// [elements] with the other lists being empty. These arguments are usually
+/// only used later in the recursion.
+List<List<T>> _generatePermutations<T>(List<T> elements,
+    List<T> currentPermutation, List<List<T>> allPermutations) {
+  if (elements.isEmpty) {
+    // Base case: Add the current permutation to the list of all permutations.
+    allPermutations.add(currentPermutation);
+  } else {
+    // Create all permutations out of the current elements.
+    for (final element in elements) {
+      final nextPermutation = currentPermutation.toList()..add(element);
+      final remainingElements = elements.toList()..remove(element);
+      allPermutations = _generatePermutations(
+          remainingElements, nextPermutation, allPermutations);
+    }
+  }
+  return allPermutations;
+}
+
+/// Generates all permutations of the given [elements] and returns them.
+///
+/// The function permutes the given list of [elements] and returns all possible
+/// combinations. If [elements] is empty, an empty list is returned as well. If
+/// [filterDuplicates] is set to true, the function will only return unique
+/// permutations. Otherwise, some combinations may be duplicated if any of the
+/// [elements] in the list appear more than once.
+///
+/// Examples:
+/// ```dart
+/// print(permuteList(['x', 'y']));
+/// // [['x', 'y'], ['y', 'x']]
+///
+/// print(permuteList([1, 2, 3]));
+/// // [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+///
+/// print(permuteList([1, 1, 2], filterDuplicates: true));
+/// // [[1, 1, 2], [1, 2, 1], [2, 1, 1]]
+/// ```
+List<List<T>> permuteList<T>(List<T> elements,
+    {bool filterDuplicates = false}) {
+  if (elements.isEmpty) return [];
+  final permutations = _generatePermutations(elements, <T>[], <List<T>>[]);
+
+  // If it is not necessary to filter duplicates, return early.
+  if (!filterDuplicates) return permutations;
+
+  // Otherwise, return only the unique combinations (checking list equality).
+  var uniqueCombinations = <List<T>>[];
+  for (final permutation in permutations) {
+    if (uniqueCombinations
+        .any((combination) => _listsEqual(combination, permutation))) {
+      continue;
+    }
+    uniqueCombinations.add(permutation);
+  }
+  return uniqueCombinations;
+}

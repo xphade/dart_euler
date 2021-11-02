@@ -205,4 +205,85 @@ void main() {
           43);
     });
   });
+
+  group('permuteList', () {
+    test('int', () {
+      var permutations = <List<int>>[];
+
+      permutations = permuteList([]);
+      expect(permutations, isEmpty);
+
+      permutations = permuteList([1]);
+      expect(permuteList([1]), [
+        [1]
+      ]);
+
+      permutations = permuteList([1, 2]);
+      expect(
+          permutations,
+          containsAll([
+            [1, 2], [2, 1] //
+          ]));
+      expect(permutations.length, 2);
+
+      permutations = permuteList([1, 2, 3]);
+      expect(
+          permutations,
+          containsAll([
+            [1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1] //
+          ]));
+      expect(permutations.length, 6);
+    });
+
+    test('String', () {
+      var permutations = <List<String>>[];
+
+      permutations = permuteList(['x', 'y']);
+      expect(
+          permutations,
+          containsAll([
+            ['x', 'y'], ['y', 'x'] //
+          ]));
+      expect(permutations.length, 2);
+
+      permutations = permuteList(['x', 'y', 'z']);
+      expect(
+          permutations,
+          containsAll([
+            ['x', 'y', 'z'], ['x', 'z', 'y'], //
+            ['y', 'x', 'z'], ['y', 'z', 'x'], //
+            ['z', 'x', 'y'], ['z', 'y', 'x']
+          ]));
+      expect(permutations.length, 6);
+
+      permutations = permuteList(['ab', 'ba']);
+      expect(
+          permutations,
+          containsAll([
+            ['ab', 'ba'], ['ba', 'ab'] //
+          ]));
+      expect(permutations.length, 2);
+    });
+
+    test('filterDuplicates', () {
+      final permutationsWithDuplicates =
+          permuteList([1, 1, 2], filterDuplicates: false);
+      final permutationsWithoutDuplicates =
+          permuteList([1, 1, 2], filterDuplicates: true);
+
+      expect(
+          permutationsWithDuplicates,
+          containsAll([
+            [1, 1, 2], [1, 2, 1], [2, 1, 1] //
+          ]));
+      expect(
+          permutationsWithoutDuplicates,
+          containsAll([
+            [1, 1, 2], [1, 2, 1], [2, 1, 1] //
+          ]));
+
+      expect(permutationsWithDuplicates.length, 6);
+      expect(permutationsWithoutDuplicates.length, 3);
+    });
+  });
 }
