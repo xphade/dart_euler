@@ -66,6 +66,8 @@ String _solveSpecificProblem(int number) {
     return circularPrimes(1000000).toString();
   } else if (number == 36) {
     return doubleBasePalindromes(1000000).toString();
+  } else if (number == 41) {
+    return largestPandigitalPrime().toString();
   } else if (number == 42) {
     return codedTriangleNumbers('lib/res/p042_words.txt').toString();
   } else if (number == 45) {
@@ -104,6 +106,7 @@ void printAllSolutions() {
   print('29. Distinct powers:                   ${_solveSpecificProblem(29)}');
   print('35. Circular primes:                   ${_solveSpecificProblem(35)}');
   print('36. Double-base palindromes:           ${_solveSpecificProblem(36)}');
+  print('41. Pandigital prime:                  ${_solveSpecificProblem(41)}');
   print('42. Coded triangle numbers:            ${_solveSpecificProblem(42)}');
   print('45. Triangular, pentagonal, hexagonal: ${_solveSpecificProblem(45)}');
 }

@@ -266,6 +266,10 @@ void main() {
     expect(doubleBasePalindromes(1000000), 872187);
   });
 
+  test('#41 largestPandigitalPrime', () {
+    expect(largestPandigitalPrime(), 7652413);
+  });
+
   test('#42 codedTriangleNumbers', () {
     expect(() => codedTriangleNumbers('/non/existing/path'), throwsAssertion);
     expect(codedTriangleNumbers('lib/res/p042_words.txt'), 162);

@@ -28,5 +28,6 @@ export 'package:dart_euler/src/problem28.dart';
 export 'package:dart_euler/src/problem29.dart';
 export 'package:dart_euler/src/problem35.dart';
 export 'package:dart_euler/src/problem36.dart';
+export 'package:dart_euler/src/problem41.dart';
 export 'package:dart_euler/src/problem42.dart';
 export 'package:dart_euler/src/problem45.dart';
