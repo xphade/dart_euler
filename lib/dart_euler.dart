@@ -72,6 +72,8 @@ String _solveSpecificProblem(int number) {
     return codedTriangleNumbers('lib/res/p042_words.txt').toString();
   } else if (number == 45) {
     return triangularPentagonalHexagonal(286).toString();
+  } else if (number == 47) {
+    return distinctPrimesFactors(4).toString();
   } else {
     return 'Not implemented yet.';
   }
@@ -109,6 +111,7 @@ void printAllSolutions() {
   print('41. Pandigital prime:                  ${_solveSpecificProblem(41)}');
   print('42. Coded triangle numbers:            ${_solveSpecificProblem(42)}');
   print('45. Triangular, pentagonal, hexagonal: ${_solveSpecificProblem(45)}');
+  print('47. Distinct primes factors:           ${_solveSpecificProblem(47)}');
 }
 
 /// Prints the solution to Project Euler problem [number].

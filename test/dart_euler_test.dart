@@ -283,4 +283,13 @@ void main() {
     expect(triangularPentagonalHexagonal(100), 40755);
     expect(triangularPentagonalHexagonal(286), 1533776805);
   });
+
+  test('#47 distinctPrimesFactors', () {
+    expect(() => distinctPrimesFactors(-1), throwsAssertion);
+    expect(() => distinctPrimesFactors(0), throwsAssertion);
+    expect(distinctPrimesFactors(1), 2);
+    expect(distinctPrimesFactors(2), 14);
+    expect(distinctPrimesFactors(3), 644);
+    expect(distinctPrimesFactors(4), 134043);
+  });
 }
