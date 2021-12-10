@@ -266,6 +266,15 @@ void main() {
     expect(doubleBasePalindromes(1000000), 872187);
   });
 
+  test('#37 truncatablePrimes', () {
+    expect(() => truncatablePrimes(-1), throwsAssertion);
+    expect(() => truncatablePrimes(0), throwsAssertion);
+    expect(() => truncatablePrimes(12), throwsAssertion);
+    expect(truncatablePrimes(1), 23);
+    expect(truncatablePrimes(3), 113);
+    expect(truncatablePrimes(11), 748317);
+  });
+
   test('#41 largestPandigitalPrime', () {
     expect(largestPandigitalPrime(), 7652413);
   });
