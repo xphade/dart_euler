@@ -24,15 +24,12 @@ BigInt pow(int x, int exponent) {
   // Special case: x^0 = 1 for all x.
   if (exponent == 0) return BigInt.from(1);
 
-  var number = BigInt.from(1);
-  final base = BigInt.from(x);
-
-  // Do not use `math.pow` in order to avoid overflow issues.
-  for (var i = 0; i < exponent; i++) {
-    number *= base;
+  final halfPower = pow(x, exponent ~/ 2);
+  if (exponent.isEven) {
+    return halfPower * halfPower;
+  } else {
+    return BigInt.from(x) * halfPower * halfPower;
   }
-
-  return number;
 }
 
 /// Checks if the given [number] is a prime.
